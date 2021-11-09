@@ -6,5 +6,7 @@
 .username{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:rgb(211, 248, 236);
-
+}
+.navbar-nav{
+  font-size: 19px;
 }

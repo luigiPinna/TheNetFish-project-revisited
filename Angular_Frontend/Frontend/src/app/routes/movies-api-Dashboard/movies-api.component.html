@@ -1,13 +1,19 @@
 <!-- TITOLI  DASHBOARD -->
 <body>
-  <div class="weather">
-    <app-weather></app-weather> <!-- widget weather sulla sinistra in alto -->
-  </div>
-<div></div>
+
+
 
 <!-- visualizzazione film attraverso ciclo for e relativi titolo e global rating -->
   <div class="container">
-    <h1 class="text-center mb-5">MOVIE SUGGESTIONS IN A {{ todaysWeather}} DAY</h1>
+    <div class="text-center edit-h1">
+      <h1 class="mb-5">MOVIE SUGGESTIONS IN A <cite>{{ todaysWeather}}</cite> DAY</h1>
+    </div>
+
+
+    <div class="weather">
+      <app-weather></app-weather> <!-- widget weather sulla sinistra in alto -->
+    </div>
+
     <table class="table"  *ngIf="results != null">
       <tbody>
         <tr class="pointer" *ngFor="let entry of results | slice:0:20;" (click)="goToDetails(entry.id)">

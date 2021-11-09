@@ -5,18 +5,14 @@ body {
     height: 50%
 }
 
-body {
-    background-color: #a5a5b1c4;
-    display: grid;
-    place-items: center
-}
-
 .card {
-    background-color: #343a40;
+    background-color: none;
     border-radius: 20px;
-    color: rgb(240, 197, 116);
+    color: rgb(73, 73, 73);
     font-family: 'Poppins', sans-serif;
-    max-width: 150px;
+    max-width: max-content;
+    max-height: max-content;
+
 }
 .card:hover{
   transition: .2s;
@@ -25,7 +21,7 @@ body {
 
 #heading {
     font-size: 25px;
-    color: rgb(240, 197, 116);
+    color: rgb(77, 77, 77);
 }
 
 .temp {
