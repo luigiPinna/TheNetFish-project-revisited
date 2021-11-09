@@ -1,54 +1,64 @@
 <body class=margin-full>
  <div class="container p-5">
-  <section class="vh-100 bg-image mt-5">
+  <section class="vh-100 bg-image mt-1">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-12 col-md-9 col-lg-7 col-xl-6">
             <div class="card" style="border-radius: 15px;">
-              <div class="card-body p-5">
-                <h3 class="text-uppercase text-center mb-3">Create your account</h3>
+              <div class="card-body pl-5 pr-5">
+                <h4 class="text-uppercase text-center">Create your account</h4>
 
                   <img src="\assets\img\createAccountIcon.png" alt="Crete an Account" class="center colorIcon">
 
-                <form class="pt-5" (ngSubmit)="createUser(form)" #form="ngForm">
-                  <div class="form-group">
-                    <label for="username"></label>
+                <form class="pt-2" (ngSubmit)="createUser(form)" #form="ngForm">
+                  <div class="form-group mb-1">
+
                     <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="name" id="name" placeholder="First Name">
+                    <label for="name" class="control-label">Your Name</label>
 
                   </div>
-                  <div class="form-group">
-                    <label for="username"></label>
+                  <div class="form-group mb-1">
+
                     <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="surname" id="surname" placeholder="Surname">
+                    <label for="surname" class="control-label">Your Surname</label>
+
                   </div>
 
-                  <div class="form-group">
-                    <label for="username"></label>
+                  <div class="form-group mb-1">
                     <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="email" id="email" placeholder="E-mail">
+
                     <div class="inputError ml-2"> <p *ngIf="!emailOk" >Invalid Email!</p></div>
+                    <label for="email" class="control-label">Your Email</label>
+
                   </div>
-                  <div class="form-group">
-                    <label for="username"></label>
+                  <div class="form-group mb-1">
+
                     <input type="text" method="POST" required ngModel class="form-control form-control-lg" name="username" id="username" placeholder="Username">
+
                     <div class="inputError ml-2"> <p *ngIf="!usernameOk">Admin username not available </p></div>
                     <div class="inputError ml-2"> <p *ngIf="!usernameExist">Username already in use </p></div>
+                    <label for="username" class="control-label">Username</label>
 
                   </div>
-                  <div class="form-group">
-                    <label for="password"></label>
+                  <div class="form-group mb-1">
+
                     <input type="password" method="POST" required ngModel class="form-control form-control-lg" name="password" id="password" placeholder="Password">
+                    <label for="password" class="control-label">Password</label>
+
                   </div>
 
-                  <div class="form-group">
-                    <label for="confirmPassword"></label>
+                  <div class="form-group mb-1">
+
                     <input type="password" method="POST" required ngModel class="form-control form-control-lg" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
 
                       <div class="inputError ml-2"> <p *ngIf="!passwordOk" >Entered Password is not matching! Try Again</p></div>
+                      <label for="confirmPassword" class="control-label">Confirm Password</label>
 
                     <span id='message'></span>
                   </div>
 
-                  <div class="col-12 mb-3">
+                  <div class="col-12 mb-1">
                     <div class="form-check">
                       <input type="checkbox" value="b" (click)="click($event)"/>
 
@@ -59,10 +69,10 @@
                   </div>
 
                   <div class="d-flex justify-content-center">
-                    <button type="submit" name="submit" id="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="!form.valid">Register</button>
+                    <button type="submit" name="submit" id="submit" class="btn btn-success btn-block btn-lg gradient-custom-4" [disabled]="!form.valid">Register</button>
                   </div>
 
-                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body" [routerLink]="['/login']"><u>Login here</u></a></p>
+                  <p class="text-center text-muted mt-2">Have already an account? <a href="#!" class="fw-bold text-body" [routerLink]="['/login']"><u>Login here</u></a></p>
 
                 </form>
 
