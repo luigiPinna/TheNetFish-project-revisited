@@ -22,7 +22,7 @@
     "@angular/router": "~9.1.1",
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
-    "bootstrap": "^4.4.0",
+    "bootstrap": "^4.6.1",
     "crypto-js": "^4.1.1",
     "font-awesome": "^4.7.0",
     "nan": "2.3",

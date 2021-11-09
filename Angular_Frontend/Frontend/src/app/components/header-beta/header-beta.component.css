@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "DK Lemon Yellow Sun";
+  src: local("DK Lemon Yellow Sun"),
+    url(../../../assets/fonts/DKLemonYellowSun.otf) format("truetype");
+}
+.username{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:rgb(211, 248, 236);
+
+}

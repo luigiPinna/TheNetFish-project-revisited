@@ -1,3 +1,4 @@
+import { LoginService } from 'src/app/services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderBetaComponent implements OnInit {
 
-  constructor() { }
+  isCollapsed = true;
+  username:string;
+
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
+    this.username = sessionStorage.getItem('username');
+  }
+
+  toggleMenu()
+  {
+    this.isCollapsed = !this.isCollapsed;
   }
 
 }
