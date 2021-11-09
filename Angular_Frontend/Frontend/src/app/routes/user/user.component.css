@@ -1,0 +1,160 @@
+.margin-top{
+margin-top: 50px;
+}
+.container-update{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: rgb(235, 235, 235);
+  border-radius:10px;
+}
+.inputError{
+  font-size: 12px;
+  color:rgb(244, 134, 17);
+  font-family: "Poppins", sans-serif;
+  background: none;
+}
+.font{
+  font-family: "DK Lemon Yellow Sun";
+  font-weight: bold;
+}
+.footerGiu{
+  margin-bottom: 200px;
+  margin-top: 400px;
+  padding-top: 100px;
+}
+.back-home{
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    margin-bottom: 150px;
+}
+.font-size-button-back-home{
+  font-size: 30px;
+}
+a{
+  color: black;
+}
+
+.container-update {
+  background-color: black;
+}
+
+.far {
+  font-size: 20px;
+}
+
+.form-group, .form-control, .table, .table-secondary, .table-info, .text-center, .container{
+  font-family:monospace;
+  font-weight: 50;
+  background-color: black;
+  color: white;
+}
+
+.text-center {
+  font-family: monospace;
+}
+
+.btn {
+  color:lawngreen;
+
+}
+.usersDetails, .table{
+  width: 1000px;
+  border: 2px solid greenyellow;
+  margin-left: 0;
+
+}
+
+.container {
+  max-width: 70%;
+  border:2px solid lawngreen;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.body {
+  background-color: black;
+}
+
+
+.table-responsive {
+  border: 1px solid red;
+}
+
+tr:hover{
+  transition: .2s;
+  background-color:rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+
+}
+
+.test{
+    border-spacing: 0;
+    width: 100%;
+    table-layout:auto;
+  }
+.test.th {
+    text-align: left;
+    padding: 8px;
+  }
+.test.td {
+    text-align: left;
+    padding: 8px;
+  }
+
+
+
+/* Media Query per il No More Tables */
+
+@media only screen and (max-width: 767px) {
+    /* Forza la tabella a non comportarsi come una normale tabella */
+
+  #no-more-tables table,
+  #no-more-tables thead,
+  #no-more-tables tbody,
+  #no-more-tables th,
+  #no-more-tables td,
+  #no-more-tables tr {
+    display: block;
+  }
+
+  /* Nasconde le intestazioni della tabella */
+
+  #no-more-tables thead tr {
+    position: absolute;
+    top:-9999px;
+    left:-9999px;
+  }
+
+  #no-more-tables td {
+    /* Inserisce il comportamento come una riga */
+
+    border: none;
+    margin-top: 5px;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align:left;
+  }
+
+  #no-more-tables td:before {
+    /* Inserisce il comportamento come un'intestazione di tabella */
+
+    position: absolute;
+    /* I valori top/left agiscono come padding */
+
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+
+  /* Aggiunge l'etichetta ai dati della tabella */
+
+  #no-more-tables td:before { content: attr(data-title); }
+}
+
+

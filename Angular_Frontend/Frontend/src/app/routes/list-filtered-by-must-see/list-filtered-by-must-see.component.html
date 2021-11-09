@@ -1,0 +1,65 @@
+
+<div class="container p-5" *ngIf= "!null">
+  <h1 class="text-center mb-5"> My next movies</h1>
+<div class="my-container">
+  <div class="list-container">
+  <table class="table">
+    <thead class="testa">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Title</th>
+        <th scope="col">Vote</th>
+        <th scope="col">Runtime</th>
+        <th scope="col">Release</th>
+        <!--<th scope="col">Overview</th>-->
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let entry of movies | listFilteredByMustSee : userId ; let i = index">
+        <td class="bold pointer poster"><img src = {{basicImageUrl}}{{entry.rated}} class="hover-shadow imgClass" (click)="goToDetails(entry.movie_id)"></td>
+        <td class="bold pointer" (click)="goToDetails(entry.movie_id)"> {{ entry.name }}</td>
+        <td class="rating">{{ entry.evaluation }}</td>
+        <!--<td>{{ entry.movie_id}}</td>-->
+        <td>{{ entry.cast}} minutes</td>
+        <td>{{ entry.director}}</td>
+        <!--<td>{{ entry.reviews}}</td>-->
+
+   <td>
+    <button type="submit" class="btn btn-default" (click)="delete(entry.id); exit()">
+     <span class="far fa-trash-alt" aria-hidden="true"></span>
+    </button>
+   </td>
+
+
+
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+</div>
+</div>
+
+<app-loading-page *ngIf="!movies"></app-loading-page>
+
+
+
+
+<!--
+
+<h3>Using NgIf with strings</h3>
+
+<div>
+  <input type="checkbox" name="rad2" [checked]="valueDue === 'Health'" (click)="valueDue = 'Health'"> Health
+  <input type="checkbox" name="rad3" [checked]="value === 'Trust'" (click)="value = 'Trust'"> Trust
+</div>
+
+<div *ngIf="valueDue === 'Health'">
+   <b>Health is checked.</b>
+</div>
+<div *ngIf="value === 'Trust'">
+   <b>Trust is checked.</b>
+</div>
+-->

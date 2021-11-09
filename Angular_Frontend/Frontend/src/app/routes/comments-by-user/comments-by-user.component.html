@@ -1,0 +1,29 @@
+<div class="container-commenti p-5" >
+  <h1>My comments</h1>
+    <table class="table">
+      <thead class="testa">
+        <tr>
+          <th class="p-r-c"scope="col">Movie</th>
+          <th scope="col">Comment</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cursor rigaScura" *ngFor="let entry of movieComments">
+          <td class="pointer bold" (click)="goToDetails(entry.movieId)">{{entry.title}}</td>
+          <td class="pointer" (click)="goToDetails(entry.movieId)">{{entry.comment}}</td>
+          <div class="media-resizer">
+          <td><button class="btn" [routerLink]="['/editComment/'+ entry.commentId]">
+            <span class="fas fa-edit ml-4"></span>
+          </button></td>
+
+          <td><button type="button" class="btn" (click)="deleteCommentButton(entry.commentId)" (click)="reloadPage()">
+            <span class="far fa-trash-alt"></span>
+          </button></td>
+        </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ <app-loading-page *ngIf="!comments" ></app-loading-page>
+

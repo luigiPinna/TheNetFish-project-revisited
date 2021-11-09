@@ -1,0 +1,330 @@
+/** {
+  font-family: "DK Lemon Yellow Sun";
+}
+*/
+.elm-cntr {
+  max-width:800px;
+  background-color:#b1afaf28;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left:1%;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+
+h1 {
+  font-size: 50px;
+}
+
+.container1 div {
+  /*border: 1px #ccc solid;LINEE GUIDA*/
+  padding: 10px;
+}
+
+
+.box1 {
+  max-width: 800px;
+  font-size: 20px;
+  margin-left: 5%;
+  flex: 1;
+}
+.box2 {
+  margin-left: 5%;
+  flex: 1;
+}
+.box3 {
+  margin-top: 1%;
+  margin-bottom: 10%;
+  margin-left: 5%;
+  flex: 1;
+}
+.boxImg {
+  margin-top: 130px;
+  margin-left: 5.5%;
+  flex: 1;
+
+}
+
+
+.addButtons-container  {
+  -webkit-appearance: none;
+  -ms-progress-appearance: none;
+  appearance: none;
+}
+
+
+.box-buttonAdd {
+  margin-left: 5%;
+  flex: 1;
+  color: #b1afaf;
+
+}
+
+
+.box-buttonAdd:hover {
+  color:rgba(0, 0, 0, 0.4);
+  transition: .2s;
+
+}
+
+
+.box-buttonSeen {
+  margin-left: 37%;
+  flex: 1;
+  color: #b1afaf;
+}
+
+.box-buttonSeen:hover {
+  color:rgba(0, 0, 0, 0.4);
+  transition: .2s;
+
+}
+/*FINE CONTAINER1*/
+
+.shadowx {
+  box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.4);
+}
+
+.frame {
+  margin-top: 5%;
+  border-radius: 4px;
+
+}
+.shadow:hover {
+  text-shadow: 4px 4px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.elements {
+text-align: justify;
+max-width: 800px;
+color: #343a40;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 80;
+  color:#343a40;
+}
+
+.font {
+font-family:"DK Lemon Yellow Sun";
+
+}
+.info-list {
+  padding: 1em;
+  grid-template-columns: 50% 50%;
+
+  padding-left: -10px;
+  background-color: #f8f9fa;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.title {
+  /*text-shadow: ????*/
+  margin-top: 1%;
+  text-transform: uppercase;
+  padding-top: 50px;
+  color: #343a40;
+  font-weight: 500;
+}
+
+.buttons {
+  background-color: #f8f9fa;
+  border: none;
+  background: #b1afaf;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  font-family: "DK Lemon Yellow Sun";
+  color: white;
+}
+
+.buttons:hover {
+    border-radius: 3px;
+    transition: .1s;
+    transform: scale(1.1);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.aligner {
+  margin-top: 20px;
+  margin-left: 0.5%;
+  padding-bottom: 5px;
+  font-family: "DK Lemon Yellow Sun";
+  font-size: 20px;
+}
+
+
+.star-container {
+font-size: 22px;
+color: rgb(218, 192, 47);
+padding: none;
+}
+
+
+
+.container-rating {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.com {
+  font-family: "DK Lemon Yellow Sun";
+  font-size: 30px;
+  color: #343a40;
+  margin-left: 5%;
+  margin-bottom: 5px;
+}
+
+
+.list-box {
+  display: flex;
+  margin-left: 5%;
+
+}
+
+.form-groupList {
+  flex: 1;
+  max-width:  30%;
+}
+
+
+.aligner-5 {
+  margin-left: 5%;
+  font-weight: 2000;
+}
+
+.btn-primary {
+  font-weight: 2000;
+  margin-top: 2%;
+ height: 38px;
+ border-radius:2px;
+}
+
+.innerText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 50;
+
+
+
+}
+
+
+.bg-select {
+  background-color: rgba(131, 128, 128, 0.22);
+  border-radius: 3px;
+}
+
+
+.comment-wrapper{
+  margin-left: 5%;
+overflow: hidden;
+}
+
+
+
+.form-group {
+height: 150px;
+  max-width: 800px;
+}
+
+
+
+.container-AllComments{
+  margin-bottom: 5%;
+  margin-top: 30px;
+  margin-left: 5.5%;
+  max-width: 775px;
+  background-color: rgba(131, 128, 128, 0.22);
+  border-radius: 3px;
+  border: 1px solid rgba(95, 93, 93, 0.22);
+
+}
+
+.mb-2 {
+  margin-left: 5.5%;
+  margin-top: 20px;
+  font-family:"DK Lemon Yellow Sun";
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.body-comments {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color:rgba(0, 0, 0, 0.63);
+  padding-left: 15px;
+
+}
+
+.body-user {
+  font-family:"Poppins", sans-serif;
+  color: rgba(216, 145, 13, 0.4);
+  font-size: 18px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  max-width: 40px;
+}
+
+
+
+
+.btn-cmt {
+  margin-top: 3px;
+
+}
+
+
+.style-text-area {
+  background-color: rgba(109, 95, 95, 0.24);
+  border: none;
+}
+
+.fas{
+  color:rgba(85, 83, 83, 0.308);
+}
+.fas:hover{
+  color:rgba(102, 99, 99, 0.514);
+  transition: .2s;
+
+}
+
+
+@media (max-width: 900px) {
+  .poppins {
+    font-size: 16px;
+    transition: .3s;
+  }
+
+  .container1{
+    margin-right: 5%;
+    transition: .3s;
+  }
+
+  .form-groupList {
+    transition: .3s;
+    max-width: 50%;
+  }
+
+  .container-AllComments {
+    transition: .3s;
+    margin-bottom: 20%;
+  }
+
+  .elm-cntr{
+    font-size: 17px;
+  }
+  }
