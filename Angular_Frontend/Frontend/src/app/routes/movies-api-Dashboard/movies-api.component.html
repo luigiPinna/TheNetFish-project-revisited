@@ -1,31 +1,76 @@
 <!-- TITOLI  DASHBOARD -->
-<body>
-
-
 
 <!-- visualizzazione film attraverso ciclo for e relativi titolo e global rating -->
   <div class="container">
-    <div class="text-center edit-h1">
-      <h1 class="mb-5">MOVIE SUGGESTIONS IN A <cite>{{ todaysWeather}}</cite> DAY</h1>
-    </div>
-
+    <div class="text-center edit-h1"> </div>
 
     <div class="weather">
+      <h1 class="mb-2 mr-4">MOVIE SUGGESTIONS IN A <cite>{{ todaysWeather}}</cite> DAY</h1>
       <app-weather></app-weather> <!-- widget weather sulla sinistra in alto -->
     </div>
 
     <table class="table"  *ngIf="results != null">
+     <!-- <div class="card text-white bg-dark" style="max-width: 150rem;">-->
       <tbody>
         <tr class="pointer" *ngFor="let entry of results | slice:0:20;" (click)="goToDetails(entry.id)">
-          <div><img src = {{basicImageUrl}}{{entry.poster_path}} class="hover-shadow imgClass"></div> <!-- Ciclo dei film con le immagini -->
+          <div>
+            <img src = {{basicImageUrl}}{{entry.poster_path}} class="hover-shadow imgClass">
+          </div> <!-- Ciclo dei film con le immagini -->
+
           <div class="info-cntr">
           <p id="p">{{ entry.title }} </p> <!-- titoli -->
           <p id="b">{{ entry.vote_average }}</p> <!-- voto globale -->
+
+        </div>
+
+        <div class="info-cntr">
+          <p id="p" class="limit-overview">{{ entry.overview }}</p> <!-- descrizione tagliata -->
+          <p id="b" class="pt-5">...</p>
         </div>
         </tr>
       </tbody>
+
     </table>
+
   </div>
-  </body>
+
+  <!-- Carosello in test
+  <div class="container mb-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+
+          <div *ngFor="let entry of results | slice:0:1;" (click)="goToDetails(entry.id)">
+                <img class="d-block w-1000"  src = {{bigImagePath}}{{entry.backdrop_path}} alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>{{ entry.title }}</h5>
+                  <p>{{ entry.overview }}</p>
+                </div>
+          </div>
+
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" *ngFor="let entry of results | slice:0:1;" (click)="goToDetails(entry.id)" src = {{bigImagePath}}{{entry.backdrop_path}} >
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" *ngFor="let entry of results | slice:1:2;" (click)="goToDetails(entry.id)" src = {{bigImagePath}}{{entry.backdrop_path}} >
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+-->
   <app-loading-page *ngIf="!results"></app-loading-page>
 

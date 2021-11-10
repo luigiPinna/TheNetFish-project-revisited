@@ -1,10 +1,6 @@
-
 /* BASIC */
-
-
 .fas{
   color:rgb(126, 109, 109);
-
 }
 
 html {
@@ -68,29 +64,17 @@ h2 {
   border-radius: 0 0 10px 10px;
 }
 
-/* TABS */
-
-h2.inactive {
-  color: #cccccc;
-}
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #7d7e80;
-}
-
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]{
-  font-family:"DK Lemon Yellow Sun";
-  background-color: #b1afaf;
+  font-family: "Poppins", sans-serif;
+
   border: none;
   color: white;
   padding: 10px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  text-transform: uppercase;
   font-size: 20px;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
@@ -103,7 +87,7 @@ input[type=button], input[type=submit], input[type=reset]{
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #7d7e80;
+
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
@@ -119,7 +103,6 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
 input[type=text], input[type=password] {
   background-color: #f6f6f6;
   border: none;
-
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -248,28 +231,17 @@ input[type=text]:placeholder {
 
 
 .btn {
-  font-family:"DK Lemon Yellow Sun";
-  background-color: #b1afaf;
   border: none;
-  padding: 8px 25px;;
 }
 
 .btn:hover {
   border-radius: 3px;
   transition: .2s;
-  background-color: #7d7e80; /**/
-  transform: scale(1.1);
+  transform: scale(1.05);
   border: none;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.btn-success {
-  font-family:"DK Lemon Yellow Sun";
-  background-color: #b1afaf;
-  border: none;
-  padding: 8px 25px;;
-
-}
 
 @media (max-width: 900px) {
 

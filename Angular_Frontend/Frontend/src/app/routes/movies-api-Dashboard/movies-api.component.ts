@@ -33,13 +33,16 @@ export class MoviesApiComponent implements OnInit {
   pomeriggio: boolean = false
   sera: boolean = false
 
-  basicImageUrl: string = "https://image.tmdb.org/t/p/w185"
+  basicImageUrl: string = "https://image.tmdb.org/t/p/w185";
+
+  bigImagePath: string = "https://image.tmdb.org/t/p/w780";
 
   constructor(private apiService: MoviesApiService, private weatherService: WeatherSService, private router: Router) { }
 
   ngOnInit(): void {
     this.getMovieByCurrentWeather();
   }
+
 
   // METEO FUNZIONI
   getMovieByCurrentWeather() {

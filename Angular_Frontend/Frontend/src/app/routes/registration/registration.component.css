@@ -4,7 +4,6 @@ body {
 }
 
 .card {
-  margin-top: 15%;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   margin-bottom: 50%;
@@ -19,9 +18,7 @@ body {
   background-color: rgb(218, 56, 56);
 }
 
-
 .form-control {
-  font-family: "DK Lemon Yellow Sun";
   background-color: rgba(238, 238, 238, 0.527);
   border: solid 2px#b1afaf
 }

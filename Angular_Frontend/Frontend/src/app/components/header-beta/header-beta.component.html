@@ -19,7 +19,7 @@
 
     <div class="collapse navbar-collapse" id="mobileNavbar" [ngbCollapse]="isCollapsed">
 
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 ml-auto" style="--bs-scroll-height: 100px;">
         <li class="nav-item active">
           <a class="nav-link" href="#" [routerLink]='["/welcome"]'>Home</a>
         </li>
@@ -31,25 +31,28 @@
         </li>
         <li class="nav-item">
           <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/my-account']">
-            My Account
+            Account
           </a>
         </li>
-        <li>
-          <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">
-            <cite class=" username">{{username}}</cite>
-          </a>
-        </li>
+
         <li>
           <a *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" class="nav-link">
             <i class="fas fa-user fa-2.5x"></i>
           </a>
           </li>
+
           <li>
             <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/logout']">
 
               <i class="fas fa-sign-out-alt ml-1"></i>
             </a>
           </li>
+          <li>
+            <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">
+              <cite class=" username">Hi, {{username}}</cite>
+            </a>
+          </li>
+
       </ul>
     </div>
   </div>
