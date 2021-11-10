@@ -26,12 +26,12 @@
 td {
   padding: 10px;
 }
-h1 {
+h3 {
   margin-top: 2%;
   font-family: "DK Lemon Yellow Sun";
   font-weight: 600;
-  margin-left: 35%;
-  margin-bottom: 5%;
+ text-align: center;
+  margin-bottom: 2%;
 }
 
 .list-container {

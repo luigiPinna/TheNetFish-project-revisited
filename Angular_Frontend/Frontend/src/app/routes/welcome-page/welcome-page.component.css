@@ -1,13 +1,10 @@
-
-
 .container  {
-    padding-top: 100px;
     text-align: center;
     vertical-align: middle;
     align-items: center;
     font-family: "DK Lemon Yellow Sun";
     font-weight: bold;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
   }
 
   .fishball {
@@ -16,7 +13,6 @@
     height: 50%;
     z-index: 2;
     margin-top: 10px;
-
   }
 
   h1 {
@@ -35,6 +31,6 @@
 
   @media (max-width: 900px) {
     p {
-      margin-top: 15%;
+      margin-top: 10%;
     }
   }

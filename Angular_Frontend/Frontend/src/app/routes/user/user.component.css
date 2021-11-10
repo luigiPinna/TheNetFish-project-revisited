@@ -1,6 +1,4 @@
-.margin-top{
-margin-top: 50px;
-}
+
 .container-update{
   padding-top: 2%;
   padding-bottom: 2%;
@@ -35,10 +33,6 @@ a{
   color: black;
 }
 
-.container-update {
-  background-color: black;
-}
-
 .far {
   font-size: 20px;
 }
@@ -46,46 +40,27 @@ a{
 .form-group, .form-control, .table, .table-secondary, .table-info, .text-center, .container{
   font-family:monospace;
   font-weight: 50;
-  background-color: black;
-  color: white;
 }
 
 .text-center {
   font-family: monospace;
 }
 
-.btn {
-  color:lawngreen;
-
-}
 .usersDetails, .table{
   width: 1000px;
-  border: 2px solid greenyellow;
   margin-left: 0;
-
+  font-size:medium;
 }
 
 .container {
   max-width: 70%;
-  border:2px solid lawngreen;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-.body {
-  background-color: black;
-}
-
-
-.table-responsive {
-  border: 1px solid red;
 }
 
 tr:hover{
   transition: .2s;
-  background-color:rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-
+  background-color:rgb(56, 56, 56);
+  color: rgb(241, 241, 241);
 }
 
 .test{
@@ -101,7 +76,6 @@ tr:hover{
     text-align: left;
     padding: 8px;
   }
-
 
 
 /* Media Query per il No More Tables */

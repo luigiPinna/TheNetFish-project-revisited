@@ -1,19 +1,16 @@
+<div class="main-container">
+  <div class="container-elements">
+    <div class="row">
+      <div class="col-sm">
 
-
-
-    <div class="main-container">
-      <div class="container-elements">
-        <div class="row">
-          <div class="col-sm">
-    <div class="card">
-        <div class="top-container"> <img src="https://i.imgur.com/G1pXs7D.jpg" class="img-fluid profile-image" width="70">
-            <div class="ml-3">
-                <h4 class="name">{{user.username}}</h4>
-                <p class="mail">{{user.email}}</p>
-                <p class="mail">{{user.name}} {{user.surname}}</p>
-
+        <div class="card">
+            <div class="top-container"> <img src="https://i.imgur.com/G1pXs7D.jpg" class="img-fluid profile-image" width="70">
+                <div class="ml-3">
+                    <h4 class="name">{{user.username}}</h4>
+                    <p class="mail">{{user.email}}</p>
+                    <p class="mail">{{user.name}} {{user.surname}}</p>
+                </div>
             </div>
-        </div>
   <hr>
         <div class="wishlist-new pt-2"> <span class="wishlist"> <i class="fas fa-check mr-2 opacity"></i> <a href="#" [routerLink]="['/seenList']">Watched Movies</a></span> </div>
 
@@ -36,10 +33,10 @@
       </div>
     </div>
   </div>
-  <div class="col-sm comments-container">
-    <app-comments-by-user></app-comments-by-user>
+      <div class="col-sm comments-container">
+        <app-comments-by-user></app-comments-by-user>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-  </div>
 

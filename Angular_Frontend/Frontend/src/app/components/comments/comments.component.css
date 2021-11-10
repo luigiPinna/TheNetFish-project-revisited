@@ -1,0 +1,6 @@
+tr:hover{
+  transition: .2s;
+  background-color:rgb(209, 209, 209);
+  color: rgb(0, 0, 0);
+}
+
