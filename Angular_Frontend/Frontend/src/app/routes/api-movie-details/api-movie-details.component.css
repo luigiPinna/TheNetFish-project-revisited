@@ -6,33 +6,44 @@
   max-width:800px;
   background-color:#b1afaf28;
   border-radius: 5px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  margin-left:1%;
+  padding: 2%;
+  padding-bottom: 0.1%;
+  margin-bottom: 1%;
+  margin-top: 18%;
 }
 
 .container1 {
   display: flex;
   flex-direction: column;
 }
+.content-img-text{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+.boxImg {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  flex: 1;
+}
 
+.box1 {
+  max-width: 800px;
+  font-size: 20px;
+  margin-left: 4%;
+  margin-right: 4%;
+  flex: 1;
+}
 
 h1 {
   font-size: 50px;
 }
 
 .container1 div {
-  /*border: 1px #ccc solid;LINEE GUIDA*/
   padding: 10px;
 }
 
-
-.box1 {
-  max-width: 800px;
-  font-size: 20px;
-  margin-left: 5%;
-  flex: 1;
-}
 .box2 {
   margin-left: 5%;
   flex: 1;
@@ -43,35 +54,22 @@ h1 {
   margin-left: 5%;
   flex: 1;
 }
-.boxImg {
-  margin-top: 130px;
-  margin-left: 5.5%;
-  flex: 1;
-
-}
-
 
 .addButtons-container  {
   -webkit-appearance: none;
   -ms-progress-appearance: none;
   appearance: none;
 }
-
-
 .box-buttonAdd {
   margin-left: 5%;
   flex: 1;
   color: #b1afaf;
-
 }
-
 
 .box-buttonAdd:hover {
   color:rgba(0, 0, 0, 0.4);
   transition: .2s;
-
 }
-
 
 .box-buttonSeen {
   margin-left: 37%;
@@ -92,8 +90,7 @@ h1 {
 
 .frame {
   margin-top: 5%;
-  border-radius: 4px;
-
+  border-radius: 5px;
 }
 .shadow:hover {
   text-shadow: 4px 4px;
@@ -114,12 +111,11 @@ color: #343a40;
 
 .font {
 font-family:"DK Lemon Yellow Sun";
-
 }
+
 .info-list {
   padding: 1em;
   grid-template-columns: 50% 50%;
-
   padding-left: -10px;
   background-color: #f8f9fa;
 }
@@ -129,7 +125,6 @@ body {
 }
 
 .title {
-  /*text-shadow: ????*/
   margin-top: 1%;
   text-transform: uppercase;
   padding-top: 50px;
@@ -163,21 +158,16 @@ body {
   font-size: 20px;
 }
 
-
 .star-container {
 font-size: 22px;
 color: rgb(218, 192, 47);
 padding: none;
 }
 
-
-
 .container-rating {
   display: flex;
   flex-direction: column;
-
 }
-
 
 .com {
   font-family: "DK Lemon Yellow Sun";
@@ -187,18 +177,16 @@ padding: none;
   margin-bottom: 5px;
 }
 
-
 .list-box {
   display: flex;
   margin-left: 5%;
-
 }
 
 .form-groupList {
   flex: 1;
   max-width:  30%;
+  margin-top: 0%;
 }
-
 
 .aligner-5 {
   margin-left: 5%;
@@ -215,31 +203,22 @@ padding: none;
 .innerText {
   font-family: "Poppins", sans-serif;
   font-weight: 50;
-
-
-
 }
-
 
 .bg-select {
   background-color: rgba(131, 128, 128, 0.22);
   border-radius: 3px;
 }
 
-
 .comment-wrapper{
   margin-left: 5%;
 overflow: hidden;
 }
 
-
-
 .form-group {
 height: 150px;
   max-width: 800px;
 }
-
-
 
 .container-AllComments{
   margin-bottom: 5%;
@@ -249,7 +228,6 @@ height: 150px;
   background-color: rgba(131, 128, 128, 0.22);
   border-radius: 3px;
   border: 1px solid rgba(95, 93, 93, 0.22);
-
 }
 
 .mb-2 {
@@ -266,7 +244,6 @@ height: 150px;
   font-weight: 100;
   color:rgba(0, 0, 0, 0.63);
   padding-left: 15px;
-
 }
 
 .body-user {
@@ -279,14 +256,9 @@ height: 150px;
   max-width: 40px;
 }
 
-
-
-
 .btn-cmt {
   margin-top: 3px;
-
 }
-
 
 .style-text-area {
   background-color: rgba(109, 95, 95, 0.24);
@@ -299,7 +271,9 @@ height: 150px;
 .fas:hover{
   color:rgba(102, 99, 99, 0.514);
   transition: .2s;
-
+}
+.pos{
+  margin-top: -2.5%;
 }
 
 

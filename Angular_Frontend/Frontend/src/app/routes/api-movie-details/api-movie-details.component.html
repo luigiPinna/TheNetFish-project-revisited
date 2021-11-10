@@ -1,33 +1,32 @@
 
 <!--Noto font Link-->
-<link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"/>
 
 <!-- CORPO -->
-<body class="page-wrapper grid">
-  <div class="container1">
+
     <!--IMMAGINE FILM -->
-    <div class="boxImg">
-      <img src="{{ imagePath }}" *ngIf="imagePath != null" class="shadowx frame img-fluid"/>
+  <div class="content-img-text">
+
+      <div class="boxImg">
+        <div class="title font" *ngIf="movieDetailsEntry != null">
+          <h1>{{ movieDetailsEntry.title }}</h1>
+        </div>
+      <img src="{{ imagePath }}" *ngIf="imagePath != null" class="shadowx img-fluid"/>
     </div>
 
 <!-- TITOLO E DATI-->
     <div class="box1">
-      <div class="title font" *ngIf="movieDetailsEntry != null">
-        <h1>{{ movieDetailsEntry.title }}</h1>
-      </div>
+
       <div class="elm-cntr">
-      <div class="elements font" *ngIf="movieDetailsEntry != null">
-        <p><b>Release Date: </b> {{ movieDetailsEntry.release_date | date }}</p>
-      </div>
-      <div class="elements font" *ngIf="movieDetailsEntry != null">
-        <p><b>Runtime: </b> {{ movieDetailsEntry.runtime }} minutes</p>
-      </div>
-      <div class="elements font" *ngIf="movieDetailsEntry != null">
-        <p><b>Vote: </b> {{ movieDetailsEntry.vote_average }} </p>
-      </div>
+        <div class="elements font" *ngIf="movieDetailsEntry != null">
+          <p><b>Release Date: </b> {{ movieDetailsEntry.release_date | date }}</p>
+        </div>
+        <div class="elements font" *ngIf="movieDetailsEntry != null">
+          <p><b>Runtime: </b> {{ movieDetailsEntry.runtime }} minutes</p>
+        </div>
+        <div class="elements font" *ngIf="movieDetailsEntry != null">
+          <p><b>Vote: </b> {{ movieDetailsEntry.vote_average }} </p>
+        </div>
     </div>
       <div class="elements poppins" *ngIf="movieDetailsEntry != null">
         <p>{{ movieDetailsEntry.overview }}</p>
@@ -35,8 +34,12 @@
       <hr>
     </div>
 
+  </div>
+
+  <div class="">
+
 <!-- AGGIUNGI A LISTE FILM DA VEDERE E VISTI -->
-    <form class="pt-2 " (ngSubmit)="onSeen(formOnSeen)"  id="form1" #formOnSeen="ngForm" >
+    <form (ngSubmit)="onSeen(formOnSeen)" #formOnSeen="ngForm" >
       <div class="form-groupList list-box">
         <div class="col-sm-10">
             <select class="form-control bg-select" id="seen" required ngModel
@@ -47,20 +50,20 @@
                 </option>
             </select>
         </div>
-        <button style="font-size: 30px" type="submit" class="btn btn-default " (click)="exit()">
+        <button style="font-size: 30px" type="submit" class="btn btn-default pos" (click)="reloadPage()">
           <span class="fas fa-plus" aria-hidden="true"></span>
         </button>
       </div>
 
     </form>
-
+<div class="container1">
 <!-- RATING FORM -->
     <div class="box2">
       <form class="" (ngSubmit)="onSubmitRating(form)" #form="ngForm">
 <!-- MOVIE RATINGS-->
         <div class="container-rating">
           <div class="box-1a">
-            <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating"  required></ngb-rating>
+            <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating" required></ngb-rating>
 
           </div>
           <div class="box-2a">
@@ -80,7 +83,7 @@
                       <textarea  class="form-control style-text-area" id="body" required ngModel name="body" placeholder="comment movie">
                         </textarea>
               </div>
-              <button type="submit" (click)="exit()" class="btn buttons btn-primary btn-cmt ml-3" required>Submit Comment</button>
+              <button type="submit" (click)="reloadPage()" class="btn buttons btn-primary btn-cmt ml-3" required>Submit Comment</button>
           </form>
           <br>
           <hr>
@@ -102,6 +105,8 @@
 
     <app-loading-page *ngIf="!movieDetailsEntry"></app-loading-page>
   </div>
+
+</div>
   <!-- FINE CONTAINER-->
-</body>
+
 

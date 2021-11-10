@@ -116,13 +116,13 @@ export class ApiMovieDetailsComponent implements OnInit {
 
       } else {
         this.flag = false;
-
       }
     };
 
     //costrutto che permette di fare la Add o la PUT a seconda se il film è già presente nel BD o meno
     if (this.flag == true) {
       this.dataService.editEntry(this.movieFilm).subscribe(response => {
+        window.alert("Movie added to your list, Tkank you!");
       },
         (err) => {
           console.log("mah");
@@ -135,6 +135,7 @@ export class ApiMovieDetailsComponent implements OnInit {
       console.log("INIZIA LA ADD");
 
       this.dataService.addEntry(this.movieFilm).subscribe(response => {
+        window.alert("Movie added to your list, Tkank you!"); //non la visualizza perchè il button clicca il reload
       },
         (err) => {
           console.log("mah2");
@@ -153,6 +154,8 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.ratingSubmit = form.form.value;
     console.log("RISULTATI RATING", this.ratingSubmit);
     this.movieRatingService.addMovieRating(this.ratingSubmit).subscribe(response => {
+
+      window.alert("Rating submitted, Tkank you!"); //messaggio che informa l'utente che il rating è stato inviato
 
     },
       (err) => {
@@ -249,7 +252,7 @@ export class ApiMovieDetailsComponent implements OnInit {
     this.router.navigate(['/addComment'], { state: { data: this.id } });
   }
 
-  exit() {
+  reloadPage() {
     window.location.reload();
   }
   // eliminazione da DB di ratings **** var casa scelta stilistica dell`autore****
