@@ -1,3 +1,4 @@
+import { TransferDataService } from './../../services/transfer-data/transfer-data.service';
 import { Router } from '@angular/router';
 import { MoviesApiService } from './../../services/moviesapi.service';
 import { NgForm } from '@angular/forms';
@@ -16,9 +17,12 @@ export class SearchMovieComponent implements OnInit {
 
   basicImageUrl: string = "https://image.tmdb.org/t/p/w185"
 
-  constructor(private apiService: MoviesApiService, private router: Router) { }
+  constructor(private apiService: MoviesApiService, private router: Router, private tranferService: TransferDataService) { }
+
+  data:string;
 
   ngOnInit(): void {
+    this.getMovieListOnComponentFromHeader();
   }
 
   //Cerca il titolo inserito tra tutti i film presenti in theMovieDB
@@ -38,7 +42,6 @@ export class SearchMovieComponent implements OnInit {
         }
         console.log("alert out", this.alertNoMovie);
 
-
       },
       error => console.log(error)
     )
@@ -47,6 +50,23 @@ export class SearchMovieComponent implements OnInit {
     this.router.navigateByUrl('/movieApiDetails/' + id);
   }
 
+  getMovieListOnComponentFromHeader() {
+    this.data = this.tranferService.getData();
 
+    if(this.data!=null){
 
+    this.apiService.getMovieByTitle(this.data).subscribe(
+      response => {
+        //se è andato tutto bene, allora:
+        this.movies = response;
+        console.log("Dati dei film: ", this.movies);
+        this.results = this.movies.results;
+      },
+      error => console.log(error)
+    )
+  }
+    else{
+      this.router.navigateByUrl('/search-movie/');
+    }
+}
 }

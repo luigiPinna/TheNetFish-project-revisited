@@ -1,28 +1,32 @@
-<div class="container p-5" *ngIf= "!null">
-  <h1 class="text-center mb-5">Watched movies</h1>
+<div class="container" *ngIf= "!null">
+
+     <h1 class="text-center">Watched movies</h1>
+
 <div class="my-container">
+  <button class="btn btn-secondary mb-1" [routerLink]='["/my-account"]'>Back</button>
+
   <div class="list-container">
+
   <table class="table">
+
     <thead class="testa">
       <tr>
-       <!--<th scope="col">#</th>-->
         <th scope="col"></th>
         <th scope="col">Title</th>
         <th scope="col">Vote</th>
         <th scope="col">Runtime</th>
         <th scope="col">Release</th>
-        <!--<th scope="col">Overview</th>-->
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <tr  *ngFor="let entry of movies | listFilteredByUserId : userId ; let i = index" >
         <td class="bold pointer poster"><img src = {{basicImageUrl}}{{entry.rated}} class="hover-shadow imgClass" (click)="goToDetails(entry.movie_id)"></td>
-        <td class="bold pointer" (click)="goToDetails(entry.movie_id)"> {{ entry.name }}</td>
-        <td class="rating">{{ entry.evaluation }}</td>
-        <td>{{ entry.cast}} minutes</td>
-        <td>{{ entry.director}}</td>
-        <td>
+        <td class="bold pointer testo_centrato" (click)="goToDetails(entry.movie_id)"> {{ entry.name }}</td>
+        <td class="rating testo_centrato">{{ entry.evaluation }}</td>
+        <td class="testo_centrato">{{ entry.cast}} minutes</td>
+        <td class="testo_centrato">{{ entry.director}}</td>
+        <td class="testo_centrato">
           <button type="submit" class="btn btn-default" (click)="delete(entry.id); exit()">
             <span class="far fa-trash-alt" aria-hidden="true"></span>
           </button>

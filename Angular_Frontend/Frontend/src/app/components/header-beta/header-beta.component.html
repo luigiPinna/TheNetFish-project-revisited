@@ -19,6 +19,11 @@
 
     <div class="collapse navbar-collapse" id="mobileNavbar" [ngbCollapse]="isCollapsed">
 
+      <form class="form-inline my-2 my-lg-0" #form="ngForm" *ngIf="!isSearchMovieRoute()">
+        <input class="form-control mr-sm-2" type="text" method="GET" required ngModel name="title" id="title" placeholder="Title">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="goTosearchMovie(form)">Search</button>
+      </form>
+
       <ul class="navbar-nav me-auto my-2 my-lg-0 ml-auto" style="--bs-scroll-height: 100px;">
         <li class="nav-item active">
           <a class="nav-link" href="#" [routerLink]='["/welcome"]'>Home</a>
@@ -27,7 +32,7 @@
           <a class="nav-link" href="#" [routerLink]='["/moviesApi"]'>Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]="['/search-movie']">Search</a>
+          <a class="nav-link" href="#" [routerLink]='["/search-movie"]'>Search</a>
         </li>
         <li class="nav-item">
           <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/my-account']">

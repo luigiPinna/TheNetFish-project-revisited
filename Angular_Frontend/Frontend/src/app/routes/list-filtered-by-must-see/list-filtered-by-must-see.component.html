@@ -1,7 +1,7 @@
 
-<div class="container p-5" *ngIf= "!null">
-  <h1 class="text-center mb-5"> My next movies</h1>
-<div class="my-container">
+<div class="container" *ngIf= "!null">
+  <h1 class="text-center"> My next movies</h1>
+<div class="">
   <div class="list-container">
   <table class="table">
     <thead class="testa">
@@ -19,14 +19,14 @@
     <tbody>
       <tr *ngFor="let entry of movies | listFilteredByMustSee : userId ; let i = index">
         <td class="bold pointer poster"><img src = {{basicImageUrl}}{{entry.rated}} class="hover-shadow imgClass" (click)="goToDetails(entry.movie_id)"></td>
-        <td class="bold pointer" (click)="goToDetails(entry.movie_id)"> {{ entry.name }}</td>
-        <td class="rating">{{ entry.evaluation }}</td>
+        <td class="bold pointer testo_centrato" (click)="goToDetails(entry.movie_id)"> {{ entry.name }}</td>
+        <td class="rating testo_centrato">{{ entry.evaluation }}</td>
         <!--<td>{{ entry.movie_id}}</td>-->
-        <td>{{ entry.cast}} minutes</td>
-        <td>{{ entry.director}}</td>
+        <td class="testo_centrato">{{ entry.cast}} minutes</td>
+        <td class="testo_centrato">{{ entry.director}}</td>
         <!--<td>{{ entry.reviews}}</td>-->
 
-   <td>
+   <td class="testo_centrato">
     <button type="submit" class="btn btn-default" (click)="delete(entry.id); exit()">
      <span class="far fa-trash-alt" aria-hidden="true"></span>
     </button>
