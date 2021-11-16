@@ -45,16 +45,18 @@
               <!-- visualizza ulteriori dati restanti weather widget -->
     <div class="d-flex">
         <div class="temp-details flex-grow-1">
-              <p class="my-1"> <i class="fas fa-wind mr-1"></i>
+              <p class="my-1">
+                    <i class="fas fa-wind mr-1"></i>
                     <span> {{dataConditions.windspeed}} kn </span>
                     <i class="fas fa-tint mr-1 ml-4"></i>
                     <span> {{dataConditions.humidity}}% </span>
               </p>
 
-              <p class="my-1"> <i class="fas fa-sun mr-1"></i>
-                    <span>{{dataConditions.sunrise}} </span>
-               <i class="fas fa-moon mr-1 ml-3"></i>
-                   <span> {{dataConditions.sunset}} </span>
+              <p class="my-1">
+                  <i class="fas fa-sun mr-1"></i>
+                  <span class="mr-1">{{dataConditions.sunrise}} </span>
+                  <i class="fas fa-moon ml-2"></i>
+                  <span> {{dataConditions.sunset}} </span>
               </p>
 
         </div>

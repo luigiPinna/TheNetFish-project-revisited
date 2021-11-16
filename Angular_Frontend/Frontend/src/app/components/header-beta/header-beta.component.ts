@@ -37,5 +37,8 @@ export class HeaderBetaComponent implements OnInit {
     this.router.navigateByUrl('/search-movie'); //naviga nella pagina di indirizzamento
     console.log(this.title);
   }
-
+ //Metodo che aggiorna la pagina
+ reloadPage() {
+  window.location.reload();
+}
 }

@@ -49,10 +49,6 @@ export class UserComponent implements OnInit {
     window.location.reload();
   }
 
-  isAdmin(){
-
-  }
-
   //Visualizza tutti gli utenti
   getUsersList() {
     this.userService.getUsers().subscribe(
@@ -147,8 +143,5 @@ export class UserComponent implements OnInit {
       });
   }
 
-  exit() {
-    window.location.reload();
-  }
 }
 
