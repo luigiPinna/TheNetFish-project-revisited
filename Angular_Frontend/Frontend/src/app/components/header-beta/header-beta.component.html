@@ -21,39 +21,39 @@
 
       <form class="form-inline my-2 my-lg-0" #form="ngForm" *ngIf="!isSearchMovieRoute()">
         <input class="form-control mr-sm-2" type="text" method="GET" required ngModel name="title" id="title" placeholder="Title">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="goTosearchMovie(form)">Search</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="toggleMenu()" (click)="goTosearchMovie(form)">Search</button>
       </form>
 
       <ul class="navbar-nav me-auto my-2 my-lg-0 ml-auto" style="--bs-scroll-height: 100px;">
         <li class="nav-item active">
-          <a class="nav-link" href="#" [routerLink]='["/welcome"]'>Home</a>
+          <a class="nav-link" href="#" [routerLink]='["/welcome"]' (click)="toggleMenu()">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]='["/moviesApi"]'>Movies</a>
+          <a class="nav-link" href="#" [routerLink]='["/moviesApi"]' (click)="toggleMenu()">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]='["/search-movie"]'>Search</a>
+          <a class="nav-link" href="#" [routerLink]='["/search-movie"]' (click)="toggleMenu()">Search</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/my-account']">
+          <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/my-account']" (click)="toggleMenu()">
             Account
           </a>
         </li>
 
         <li>
-          <a *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" class="nav-link">
+          <a *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']" (click)="toggleMenu()" class="nav-link">
             <i class="fas fa-user fa-2.5x"></i>
           </a>
           </li>
 
           <li>
-            <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/logout']">
+            <a *ngIf="loginService.isUserLoggedIn()" href="#" class="nav-link" [routerLink]="['/logout']" (click)="toggleMenu()">
 
               <i class="fas fa-sign-out-alt ml-1"></i>
             </a>
           </li>
           <li>
-            <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">
+            <a *ngIf="loginService.isUserLoggedIn()" (click)="toggleMenu()" class="nav-link">
               <cite class=" username">Hi, {{username}}</cite>
             </a>
           </li>

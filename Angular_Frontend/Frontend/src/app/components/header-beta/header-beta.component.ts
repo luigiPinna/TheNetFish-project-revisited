@@ -19,6 +19,7 @@ export class HeaderBetaComponent implements OnInit {
   constructor(public loginService:LoginService, private router : Router, private transferService: TransferDataService) { }
 
   ngOnInit(): void {
+
     this.username = sessionStorage.getItem('username');
   }
   isSearchMovieRoute(){
@@ -30,6 +31,7 @@ export class HeaderBetaComponent implements OnInit {
   {
     this.isCollapsed = !this.isCollapsed;
   }
+
 
   goTosearchMovie(form:NgForm){
     this.title = form.form.value.title;

@@ -5,6 +5,8 @@ import com.thenetvalue.utenti.model.User;
 import com.thenetvalue.utenti.security.SecurityConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.Optional;
 public class UserService {
     UserRepositoryDAO userDAO;    //interfaccia user
 
+    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();;
 
     @Autowired
     public UserService(@Qualifier("dbUserDAO") UserRepositoryDAO userDAO) {
@@ -22,6 +25,10 @@ public class UserService {
 
     //Aggiunge utente
     public String addUser(User user){
+
+        //String encodedPassword = this.passwordEncoder.encode(user.getPassword()); //test crypt password
+        //user.setPassword(encodedPassword);
+
         User result = userDAO.save(user);       
         if (result!=null && result.getId() != 0){
             return "Utente salvato correttamente";
