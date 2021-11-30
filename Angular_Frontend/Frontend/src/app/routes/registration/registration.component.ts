@@ -1,3 +1,5 @@
+import { TimeDataInterface } from './../../models/time.model';
+import { WeatherSService } from 'src/app/services/weatherService/weather.service';
 import { SecurityService } from './../../services/security/security.service';
 import { LoginService } from './../../services/login/login.service';
 import { Router } from '@angular/router';
@@ -44,10 +46,17 @@ export class RegistrationComponent implements OnInit {
 
   passwordCryptata: string; //contiente la password inserita dall'utente ma cryptata
 
-  constructor(private registrationService: RegistrationService, private router: Router, private userService: LoginService, private securityService: SecurityService) { }
+  results: TimeDataInterface;  //contiene la risposta del tempo attuale
+
+  constructor(
+              private registrationService: RegistrationService,
+              private router: Router, private userService: LoginService,
+              private securityService: SecurityService,
+              private timeService : WeatherSService) { }
 
   ngOnInit(): void {
     this.getUsersList();
+    this.getTimeOnComponent();
   }
   //Visualizza tutti gli utenti
   getUsersList() {
@@ -144,7 +153,10 @@ export class RegistrationComponent implements OnInit {
 
               if (passMatched) {  //se le password inserite corrispondono
                 this.newUser = form.form.value;
+                this.newUser.registrationDate = this.results.date;
                 this.newUser.enabled = 1;
+                console.log("data di registrazione",  this.newUser.registrationDate);
+                console.log("data dall'api", this.results.date);
                 form.form.value.password = this.password;
                 this.registrationService.addUser(this.newUser).subscribe(results => {
                   console.log("Password valida", results);
@@ -196,6 +208,18 @@ export class RegistrationComponent implements OnInit {
       this.termsOk = false;
       console.log("Devi accettare i termini e le condizioni");
     }
+  }
+
+  // Funzione di supporto GET Ora Corrente
+  getTimeOnComponent() {
+    this.timeService.getCurrentTime().subscribe((
+      response: any) => {
+      this.results = response;
+      console.log("Results Time: ", this.results );
+      console.log("Results Date: ", this.results.date);
+    },
+      error => console.log(error)
+    )
   }
 }
 

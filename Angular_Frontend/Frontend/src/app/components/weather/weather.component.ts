@@ -51,6 +51,7 @@ export class WeatherComponent implements OnInit {
       response: any) => {
       this.results = response;
       console.log("Results Time: ", this.results);
+      console.log("Results Date: ", this.results.date);
     },
       error => console.log(error)
     )
