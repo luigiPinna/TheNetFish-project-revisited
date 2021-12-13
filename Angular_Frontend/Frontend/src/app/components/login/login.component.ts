@@ -4,6 +4,7 @@ import { LoginService } from './../../services/login/login.service';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderBetaComponent } from '../header-beta/header-beta.component';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,8 @@ export class LoginComponent implements OnInit {
   decryptCode:string;   //accoglie la password decifrata per fare la verifica di login
   code:string;          //veicolo per accogliere la password cryptata da cryptare
 
+  header:HeaderBetaComponent;
+
   ngOnInit(){
   }
 
@@ -39,9 +42,8 @@ submitButton(){
         this.decryptCode=this.securityService.decrypt(this.code);
 
           if(this.passwordInput===this.decryptCode){
-            sessionStorage.setItem('username',this.usernameInput);
+            this.loginService.login(this.passwordInput, this.usernameInput);
             this.invalidLogin = false;
-            this.router.navigate(['/moviesApi']);
         }
         else{
             console.log("Autenticazione fallita");

@@ -3,7 +3,7 @@
 module.exports = (sequelize, DataType) => {
   let DataEntry = sequelize.define('DataEntry', {
     // id missing because Sequelize adds it by default
-    name:  DataType.STRING(100),
+    name: DataType.STRING(100),
     cast: DataType.STRING(100),
     director: DataType.STRING(100),
     genre: DataType.STRING(100),

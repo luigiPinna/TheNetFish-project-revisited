@@ -32,15 +32,18 @@ export class HeaderBetaComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-
+  //Dialoga con il servizio trasferendogli il dato sul film cercato e apre la pagina searchfilm con l'input inserito
   goTosearchMovie(form:NgForm){
     this.title = form.form.value.title;
     this.transferService.setData(this.title); //trasferisce il dato al servizio transferData
     this.router.navigateByUrl('/search-movie'); //naviga nella pagina di indirizzamento
     console.log(this.title);
   }
+
  //Metodo che aggiorna la pagina
  reloadPage() {
   window.location.reload();
 }
+
+
 }

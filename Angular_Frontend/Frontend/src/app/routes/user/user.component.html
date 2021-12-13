@@ -139,6 +139,7 @@
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Email</th>
+          <th scope="col">Date</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -151,6 +152,7 @@
           <td data-title="Username">{{ entry.username }}</td>
           <td data-title="Password" style="word-wrap: break-word">{{ entry.password }}</td>
           <td data-title="Email"  style="word-wrap: break-word">{{ entry.email }}</td>
+          <td data-title="Date">{{ entry.registrationDate }}</td>
           <td data-title=""> <button type="submit" class="btn btn-default " (click)="delete(entry.id); reloadPage()">
             <span class="far fa-trash-alt"></span>
            </button>

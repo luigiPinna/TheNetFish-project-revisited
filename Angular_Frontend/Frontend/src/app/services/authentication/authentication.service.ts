@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   ngOnInit() {
   }
-
+/*
   checkLogin() {
     (this.loginservice.login().subscribe(
       data => {
@@ -31,4 +31,5 @@ export class AuthenticationService {
     );
 
   }
+*/
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserDataInterface } from './../../models/user.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -12,19 +13,35 @@ export class LoginService {
   private usernameAuth="admin";
   private passwordAuth="admin";
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private router : Router) { }
 
+  //Effettua il login dello user settando la sessione
+  public login(username: string, password: string) {
+    return this.getUserByUsername(username).subscribe(
+      response => {
+        let user: UserDataInterface = response;
+        sessionStorage.setItem('username',user.username);
+        this.router.navigate(['/moviesApi']);
+        return user;
+      },
+      error => console.log(error)
+    )
+  }
+  /*
   public login(){
     const headers=new HttpHeaders({
       Authorization : 'Basic '+ btoa(this.usernameAuth+":"+this.passwordAuth)});  //btoa= binari to ask
     return this.http.get<any>(this.baseURL + "/", {headers, responseType:'text' as 'json'}).pipe(map(
         userData => {
          sessionStorage.setItem('username',this.usernameAuth);
+         this.router.navigate(['/moviesApi']);
          return userData;
         }
       )
       );
   }
+  */
+
 //verifica se l'utente è loggato
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
@@ -33,7 +50,7 @@ export class LoginService {
   }
 //Effettua il logout dell'utente dalla sessione
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('username');
   }
 //visualizza la lista di tutti gli utenti presenti nel database
   public getUsers(){
@@ -72,6 +89,7 @@ export class LoginService {
     "name": newUser.name,
     "surname": newUser.surname,
     "email": newUser.email,
+    "registrationDate": newUser.registrationDate,
     "username": newUser.username,
     "password": newUser.password,
     "enabled": newUser.enabled,

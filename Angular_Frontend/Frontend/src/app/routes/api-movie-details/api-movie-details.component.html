@@ -29,11 +29,11 @@
         <div class="elements font" *ngIf="movieDetailsEntry != null">
           <p><b>Vote: </b> {{ movieDetailsEntry.vote_average }} </p>
         </div>
-    </div>
+      </div>
       <div class="elements poppins" *ngIf="movieDetailsEntry != null">
         <p>{{ movieDetailsEntry.overview }}</p>
       </div>
-      <hr>
+
     </div>
 
   </div>
@@ -65,16 +65,13 @@
 <!-- MOVIE RATINGS-->
         <div class="container-rating">
           <div class="box-1a">
-            <ngb-rating class="star-container" [max]="5" ngModel name="movie_rating" id="movie_rating" required></ngb-rating>
-
-          </div>
-          <div class="box-2a">
-            <button
-              class="btn btn-primary  buttons" [disabled]="!form.valid"
-              class="btn btn-success buttons">Submit Rating</button>
+            <div class="box-2a">
+              <ngb-rating class="star-container mr-2" [max]="5" ngModel name="movie_rating" id="movie_rating" required></ngb-rating>
+              <button class="btn btn-success buttons" [disabled]="!form.valid">Submit Rating</button>
+            </div>
           </div>
         </div>
-        <hr>
+
       </form>
     </div>
     <!--FINE RATINGS-->
